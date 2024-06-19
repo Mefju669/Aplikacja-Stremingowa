@@ -1,0 +1,125 @@
+insert into connecting_table_achievements (UserID, AchievementID ) values  (2,2), (2,3), (2,4) ;
+
+select * from connecting_table_achievements cta ;
+
+select * from connecting_table_signs cts ;
+
+select * from achievement;
+
+
+
+select * from sign;
+
+SELECT * from "user" u;
+
+
+delete from connecting_table_achievements;
+DELETE FROM achievement;
+delete from connecting_table_signs;
+
+-- Dodajemy 10 osiągnięć do tabeli Achievement
+INSERT INTO Achievement (AchievementName, Description) VALUES 
+('Nowicjusz', 'Znajdź 1 znak nawigacyjny.'),
+('Poszukiwacz', 'Znajdź 5 znaków nawigacyjnych.'),
+('Odkrywca', 'Znajdź 10 znaków nawigacyjnych.'),
+('Badacz', 'Znajdź 20 znaków nawigacyjnych.'),
+('Ekspert nawigacyjny', 'Znajdź 50 znaków nawigacyjnych.'),
+('Początkujący quizmaster', 'Rozwiąż 1 quiz.'),
+('Zaawansowany quizmaster', 'Rozwiąż 5 quizów.'),
+('Mistrz quizów', 'Rozwiąż 10 quizów.'),
+('Geniusz quizów', 'Rozwiąż 20 quizów.'),
+('Arcymistrz quizów', 'Rozwiąż 50 quizów.');
+
+-- Pamiętaj, aby dostosować nazwę tabeli i kolumn zgodnie z nazwami w Twojej bazie danych.
+
+
+delete from answer;
+
+-- Dodajemy 20 znaków żeglarskich z opisami do tabeli Sign
+INSERT INTO Sign (SignName, Description, QRCode) VALUES 
+('A1 - Zakaz wchodzenia', 'Zakaz wchodzenia (znak zakazujący wchodzenia na akwen).', 'QR_A1'),
+('A2 - Zakaz kotwiczenia', 'Zakaz kotwiczenia (znak zakazujący kotwiczenia).', 'QR_A2'),
+('A3 - Zakaz postojów', 'Zakaz postojów (znak zakazujący postojów na akwenie).', 'QR_A3'),
+('A4 - Zakaz wędkowania', 'Zakaz wędkowania (znak zakazujący wędkowania).', 'QR_A4'),
+('B1 - Nakaz płynięcia w prawo', 'Nakaz płynięcia w prawo (nakaz płynięcia w określonym kierunku).', 'QR_B1'),
+('B2 - Nakaz płynięcia w lewo', 'Nakaz płynięcia w lewo (nakaz płynięcia w określonym kierunku).', 'QR_B2'),
+('C1 - Szlak żeglugowy', 'Szlak żeglugowy (oznaczenie głównego szlaku żeglugowego).', 'QR_C1'),
+('C2 - Rozwidlenie szlaku', 'Rozwidlenie szlaku (informacja o rozwidleniu szlaku żeglugowego).', 'QR_C2'),
+('D1 - Oznaczenie przeszkody', 'Oznaczenie przeszkody (informacja o przeszkodzie na akwenie).', 'QR_D1'),
+('D2 - Oznaczenie mielizny', 'Oznaczenie mielizny (informacja o mieliznie na akwenie).', 'QR_D2'),
+('E1 - Port', 'Port (informacja o położeniu portu).', 'QR_E1'),
+('E2 - Przystań', 'Przystań (informacja o położeniu przystani).', 'QR_E2'),
+('F1 - Strefa ograniczonej prędkości', 'Strefa ograniczonej prędkości (informacja o strefie z ograniczoną prędkością).', 'QR_F1'),
+('F2 - Strefa ciszy', 'Strefa ciszy (zakaz używania silników spalinowych).', 'QR_F2'),
+('G1 - Znak ostrzegawczy', 'Znak ostrzegawczy (informacja o zagrożeniu na akwenie).', 'QR_G1'),
+('G2 - Znak informacyjny', 'Znak informacyjny (ogólna informacja o akwenie).', 'QR_G2'),
+('H1 - Przekraczanie linii energetycznych', 'Przekraczanie linii energetycznych (informacja o niskim przejściu pod linią energetyczną).', 'QR_H1'),
+('H2 - Przekraczanie mostu', 'Przekraczanie mostu (informacja o niskim przejściu pod mostem).', 'QR_H2'),
+('I1 - Strefa kąpieliska', 'Strefa kąpieliska (informacja o wyznaczonej strefie kąpieliska).', 'QR_I1'),
+('I2 - Strefa sportów wodnych', 'Strefa sportów wodnych (informacja o wyznaczonej strefie do uprawiania sportów wodnych).', 'QR_I2');
+
+-- Pamiętaj, aby dostosować nazwę tabeli i kolumn zgodnie z nazwami w Twojej bazie danych.
+
+
+-- Dodaj pytania
+INSERT INTO Question (QuestionText) VALUES
+    ('Jaki kształt ma znak A-1?'),
+    ('Co oznacza znak B-5?'),
+    ('Który znak informuje o skałach podwodnych?'),
+    ('Czym jest znak E-7?'),
+    ('Jak nazywa się znak B-2?'),
+    ('Co oznacza znak C-3?'),
+    ('Jaki kształt ma znak D-4?'),
+    ('Który znak informuje o wjeździe na jezioro?'),
+    ('Jakie niebezpieczeństwo sygnalizuje znak A-3?'),
+    ('Co oznacza znak E-5?');
+
+INSERT INTO Answer (QuestionID, AnswerText, IsCorrect) VALUES
+    (1, 'Koło', 1),
+    (1, 'Trójkąt', 0),
+    (1, 'Kwadrat', 0),
+    (1, 'Prostokąt', 0),
+    (2, 'Ląd na tym kierunku', 1),
+    (2, 'Głębokie wody na tym kierunku', 0),
+    (2, 'Niebezpieczne pływy', 0),
+    (2, 'Brzeg na tym kierunku', 0),
+    (3, 'Skały podwodne', 1),
+    (3, 'Dobre warunki żeglarskie', 0),
+    (3, 'Wiatr wieje z kierunku znaku', 0),
+    (3, 'Znajdujesz się na akwenie morskim', 0),
+    (4, 'Punkt wylotowy', 1),
+    (4, 'Ślizgawka', 0),
+    (4, 'Znajdujesz się na akwenie rzecznym', 0),
+    (4, 'Obowiązkowa nawigacja dla wszystkich jednostek', 0),
+    (5, 'Głębokie wody na tym kierunku', 1),
+    (5, 'Niebezpieczne pływy', 0),
+    (5, 'Brak przeszkód', 0),
+    (5, 'Brzeg na tym kierunku', 0),
+    (6, 'Zakaz wyprzedzania', 1),
+    (6, 'Koniec zakazu wyprzedzania', 0),
+    (6, 'Zakaz postoju', 0),
+    (6, 'Koniec zakazu postoju', 0),
+    (7, 'Koło', 1),
+    (7, 'Kwadrat', 0),
+    (7, 'Prostokąt', 0),
+    (7, 'Trójkąt', 0),
+    (8, 'Wjazd na jezioro', 1),
+    (8, 'Wjazd na akwen morski', 0),
+    (8, 'Wjazd na akwen rzeczny', 0),
+    (8, 'Brak ograniczeń', 0),
+    (9, 'Zagrożenie przeciągnięcia przez nurkujących', 1),
+    (9, 'Zakaz nurkowania', 0),
+    (9, 'Strefa bezpieczeństwa', 0),
+    (9, 'Zagrożenie sztormem', 0),
+    (10, 'Wiatr wieje z kierunku znaku', 1),
+    (10, 'Brak wiatru', 0),
+    (10, 'Zakaz żeglugi', 0),
+    (10, 'Zakaz wpływania do portu', 0);
+
+   select * from user_correct_answers;
+   delete from user_correct_answers ;
+   
+   INSERT INTO connecting_table_questions  (SignID, QuestionID) VALUES
+    (1, 1), (2, 2), (3, 3), (4, 4), (5, 5),
+    (6, 6), (7, 7), (8, 8), (9, 9), (10, 10),
+    (2, 1), (3, 2), (4, 3), (5, 4), (6, 5);

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}FAQ{% endblock %}
+
+{% block content %}
+<main class="container mt-5">
+    <h1>Frequently Asked Questions (FAQ)</h1>
+    <div class="accordion" id="faqAccordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Jak mogę zarejestrować nowe konto?
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                <div class="card-body">
+                    Aby zarejestrować nowe konto, kliknij na przycisk "Zarejestruj się" na stronie głównej i wypełnij formularz rejestracyjny swoimi danymi.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Jak mogę zmienić swoje hasło?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                <div class="card-body">
+                    Aby zmienić hasło, zaloguj się na swoje konto, przejdź do sekcji "Ustawienia" i wybierz opcję zmiany hasła.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Co zrobić, jeśli zapomniałem hasła?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                <div class="card-body">
+                    Jeśli zapomniałeś hasła, kliknij na link "Zapomniałem hasła" na stronie logowania i postępuj zgodnie z instrukcjami, aby zresetować hasło.
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

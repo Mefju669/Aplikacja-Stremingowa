@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}RoboControl{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <!-- Importowanie stylów z pliku style.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="dark-theme">
+    {% include 'main_header.html' %}
+
+    <div class="container mt-5">
+        <!-- Sekcja z kafelkami -->
+        <div class="card-container">
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Dołącz do pokoju</h5>
+                        <p class="card-text">Dołącz do istniejącego pokoju</p>
+                        <a href="/join_room" class="btn btn-primary">Przejdź</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Utwórz pokój</h5>
+                        <p class="card-text">Kliknij, aby stworzyć nowy pokój</p>
+                        <a href="/create_room" class="btn btn-primary">Utwórz</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Ustawienia</h5>
+                        <p class="card-text">Dostosuj ustawienia konta</p>
+                        <a href="/settings" class="btn btn-primary">Przejdź</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p><a href="/about">O nas</a> | <a href="/faq">FAQ</a></p>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

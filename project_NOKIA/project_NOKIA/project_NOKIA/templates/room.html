@@ -1,0 +1,53 @@
+<!-- room.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokój</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="dark-theme">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <a href="{{ url_for('redirect_and_leave') }}" class="btn btn-danger">Opuść</a>
+                <span class="float-right">Zalogowany jako: {{ current_user }}</span>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <!-- Miejsce na okienko streamu -->
+                <div class="stream-container">
+                    <img src="{{ url_for('video_feed') }}" class="img-fluid" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <!-- Miejsce na chat -->
+                <div class="chat-container">
+                    <h3>Chat</h3>
+                    <div class="chat-box" id="chat-box">
+                        <div class="chat-history">
+                            {% for message in chat_history %}
+                                <p>{{ message.user.Name }}: {{ message.MessageContent }}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <form id="chat-form" action="{{ url_for('send_message', room_code=room_code) }}" method="post">
+                        <div class="form-group">
+                            <input type="text" id="message" name="message" class="form-control" placeholder="Napisz wiadomość...">
+                            <div class="mt-4"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Wyślij</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
